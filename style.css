@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+    --Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url("images/bg-bottom.svg") bottom left no-repeat, url("images/bg-top.svg") top right no-repeat, var(--Very-Light-Grayish-Blue);
+    display: grid;
+    place-items: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 1rem;
+}
+
+h1{
+    color: var(--Grayish-Blue);
+}
+
+.toggle-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.toggle-section span{
+    font-size: 0.9rem;
+    color: var(--Light-Grayish-Blue);
+    font-weight: 500;
+}
+
+.toggle-btn{
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    height: 1.5rem;
+    padding: 0.8rem 0.2rem;
+    border-radius: 1rem;
+    background-color: hsl(236, 72%, 79%);
+    cursor: pointer;
+}
+
+.toggle-btn .circle{
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translateX(1.4rem);
+    transition: 300ms all ease;
+    background-color: var(--Very-Light-Grayish-Blue);
+}
+
+.toggle-btn.active{
+    background-color: hsl(237, 63%, 64%);
+}
+
+.toggle-btn.active .circle{
+    transform: translateX(0);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .card{
+    color: var(--Dark-Grayish-Blue);
+    padding: 1.5rem;
+    background-color: white;
+    display: flex;
+    width: 17rem;
+    flex-direction: column;
+    gap: 1.1rem;
+    text-align: center;
+}
+
+.container .card h2{
+    font-size: 1rem;
+}
+
+.container .card > p{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 700
+}
+
+.container .card > p span{
+    font-size: 2.7rem;
+    font-family: 600;
+
+}
+
+.container .basic{
+    border-radius: 1rem 0 0 1rem;
+}
+
+.container .pro{
+    color: var(--Very-Light-Grayish-Blue);
+    background: hsl(237, 67%, 67%);
+    border-radius: 1rem;
+    padding-block: 3rem;
+}
+
+.container .master{
+    border-radius: 0 1rem 1rem 0;
+}
+
+.card .info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px var(--Very-Light-Grayish-Blue) solid;
+    padding-block: 0.8rem;
+}
+
+.card .info > p{
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--Dark-Grayish-Blue);
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.card.pro .info{
+    border-top: 1px hsla(240, 26%, 83%, 0.568) solid;
+}
+
+.card.pro .info > p{
+    border-bottom: 1px var(--Very-Light-Grayish-Blue) solid;
+}
+
+.card button{
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    color: var(--Very-Light-Grayish-Blue);
+    font-weight: 700;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.card button:hover{
+    outline: 1px hsl(237, 63%, 64%) solid;
+    background: none;
+    color: hsl(237, 63%, 64%);
+}
+
+.card.pro button{
+    background: var(--Very-Light-Grayish-Blue);
+    color: hsl(237, 63%, 64%);
+}
+
+.card.pro button:hover{
+    background: none;
+    outline: 1px var(--Very-Light-Grayish-Blue) solid;
+    color: var(--Very-Light-Grayish-Blue);
+}
+
+@media (max-width:800px) {
+    .container{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .container .card.pro, .card.master, .card.basic{
+        border-radius: 1rem;
+    }
+    .container .pro{
+        padding-block: 2rem;
+    }
+}
